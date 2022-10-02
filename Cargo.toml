@@ -1,0 +1,23 @@
+[package]
+name = "rust-iot-2022"
+version = "0.1.0"
+authors = ["Mattia Fiumara <mfiumara@protonmail.com>"]
+edition = "2021"
+resolver = "2"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true # Symbols are nice and they don't increase the size on Flash
+opt-level = "z"
+
+[dependencies]
+embedded-svc = "0.22.1"
+esp-idf-svc = "0.42.3"
+esp-idf-sys = { version = "0.31.9", features = ["binstart"] }
+
+[build-dependencies]
+embuild = "0.30"
+anyhow = "1"
+
